@@ -24,55 +24,53 @@ body {
 h1 { font-size: 1.5rem; margin-top: 15px; color: #333; }
 p { color: #666; margin-bottom: 30px; }
 
+/* Botão principal com Grid de 3 colunas (idêntico à referência) */
 .link-card {
     display: grid;
-    /* Divide em: 50px para imagem | 1fr (espaço do texto) | 50px para equilibrar */
-    grid-template-columns: 50px 1fr 50px; 
+    grid-template-columns: 60px 1fr 60px; /* Foto | Texto | Espaço vazio */
     align-items: center;
-    
     background-color: #ffffff;
-    margin-bottom: 12px;
+    border-radius: 50px; /* Formato pílula */
     padding: 10px;
-    border-radius: 50px; /* Formato pílula da imagem */
+    margin-bottom: 15px;
     text-decoration: none;
     color: #333;
-    font-family: 'Arial', sans-serif;
+    font-weight: 500;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
-/* Ajuste da Imagem/Ícone */
-.btn-icon {
-    width 80px;
-    height: 80px;
-    object-fit: contain; /* Garante que o produto não amasse */
-    justify-self: center; /* Centraliza a foto no espaço dela */
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* O segredo para não bugar: O Wrapper (o quadrado invisível) */
+.img-wrapper {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Um fundo cinza leve opcional */
+    border-radius: 50%; /* Faz o wrapper ser redondo */
+    overflow: hidden; /* Garante que nada saia dele */
 }
 
-/* Texto centralizado no meio do botão */
+/* Tamanho máximo para as imagens não bugarem */
+.btn-icon {
+    width: auto;
+    height: 45px; /* Tamanho para os frascos altos ficarem bons */
+    object-fit: contain; /* Não estica, só redimensiona para caber */
+}
+
+/* Ajuste específico para imagens de pote (formato largo/quadrado) */
+.btn-icon.wide {
+    width: 50px; /* Dá preferência à largura para potes */
+    height: auto; /* Deixa a altura se ajustar automaticamente */
+}
+
+/* Texto centralizado real */
 .btn-text {
     text-align: center;
-    font-size: 16px;
-    font-weight: 500;
 }
 
 /* Espaçador invisível (essencial para o texto não ficar torto) */
 .spacer {
-    width: 50px;
-}
-
-/* Efeito de clique */
-.link-card:hover {
-    transform: scale(1.02);
-    background-color: #f9f9f9;
-}
-
-/* Opcional: Estilo para o botão de destaque (roxo) */
-.link-card.destaque {
-    background-color: #8a4fba;
-    color: white;
-    grid-template-columns: 1fr; /* Sem imagem, só texto no meio */
+    width: 60px; 
 }
