@@ -1,0 +1,78 @@
+body {
+    background-color: #ff89fb; /* Cor de fundo leve */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 { font-size: 1.5rem; margin-top: 15px; color: #333; }
+p { color: #666; margin-bottom: 30px; }
+
+.link-card {
+    display: grid;
+    /* Divide em: 50px para imagem | 1fr (espaço do texto) | 50px para equilibrar */
+    grid-template-columns: 50px 1fr 50px; 
+    align-items: center;
+    
+    background-color: #ffffff;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 50px; /* Formato pílula da imagem */
+    text-decoration: none;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+/* Ajuste da Imagem/Ícone */
+.btn-icon {
+    width 80px;
+    height: 80px;
+    object-fit: contain; /* Garante que o produto não amasse */
+    justify-self: center; /* Centraliza a foto no espaço dela */
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Texto centralizado no meio do botão */
+.btn-text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Espaçador invisível (essencial para o texto não ficar torto) */
+.spacer {
+    width: 50px;
+}
+
+/* Efeito de clique */
+.link-card:hover {
+    transform: scale(1.02);
+    background-color: #f9f9f9;
+}
+
+/* Opcional: Estilo para o botão de destaque (roxo) */
+.link-card.destaque {
+    background-color: #8a4fba;
+    color: white;
+    grid-template-columns: 1fr; /* Sem imagem, só texto no meio */
+}
