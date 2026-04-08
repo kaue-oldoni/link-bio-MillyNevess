@@ -1,6 +1,15 @@
+body, html {
+    height: 100%; /* Garante que o container pai tenha altura */
+    margin: 0;
+    padding: 0;
+}
 body {
-    background-color: #ff89fb; /* Cor de fundo leve */
-    font-family: Arial, sans-serif;
+    
+    background-position: center; 
+    background-size: cover;
+    background-color: #d559ff; 
+    background-repeat: no-repeat;
+    font-family: 'Times New Roman', Times, serif;
     display: flex;
     justify-content: center;
     padding-top: 50px;
@@ -21,16 +30,15 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-h1 { font-size: 1.5rem; margin-top: 15px; color: #333; }
-p { color: #666; margin-bottom: 30px; }
+h1 { font-size: 40px; margin-top: 15px; color: #000000; }
+p { color: #000000; margin-bottom: 30px; }
 
-/* Botão principal com Grid de 3 colunas (idêntico à referência) */
 .link-card {
     display: grid;
-    grid-template-columns: 60px 1fr 60px; /* Foto | Texto | Espaço vazio */
+    grid-template-columns: 60px 1fr 60px; 
     align-items: center;
-    background-color: #ffffff;
-    border-radius: 50px; /* Formato pílula */
+    background-color: hsl(321, 100%, 78%);
+    border-radius: 50px; 
     padding: 10px;
     margin-bottom: 15px;
     text-decoration: none;
@@ -40,37 +48,33 @@ p { color: #666; margin-bottom: 30px; }
     transition: 0.3s;
 }
 
-/* O segredo para não bugar: O Wrapper (o quadrado invisível) */
 .img-wrapper {
     width: 60px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0; /* Um fundo cinza leve opcional */
-    border-radius: 50%; /* Faz o wrapper ser redondo */
-    overflow: hidden; /* Garante que nada saia dele */
+    background-color: #f0f0f0; 
+    border-radius: 50%; 
+    overflow: hidden; 
 }
 
-/* Tamanho máximo para as imagens não bugarem */
 .btn-icon {
     width: auto;
-    height: 45px; /* Tamanho para os frascos altos ficarem bons */
-    object-fit: contain; /* Não estica, só redimensiona para caber */
+    height: 45px; 
+    object-fit: contain; 
 }
 
-/* Ajuste específico para imagens de pote (formato largo/quadrado) */
 .btn-icon.wide {
-    width: 50px; /* Dá preferência à largura para potes */
-    height: auto; /* Deixa a altura se ajustar automaticamente */
+    width: 50px; 
+    height: auto; 
 }
 
-/* Texto centralizado real */
+
 .btn-text {
     text-align: center;
 }
 
-/* Espaçador invisível (essencial para o texto não ficar torto) */
 .spacer {
     width: 60px; 
 }
